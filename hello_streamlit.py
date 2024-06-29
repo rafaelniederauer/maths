@@ -8,13 +8,13 @@ def generate_question():
 
 def main():
     st.title("Multiplication Table Quiz")
-    st.write("Answer 30 questions correctly to complete the quiz.")
+    st.write("Answer 3 questions correctly to complete the quiz.")
 
     if 'questions' not in st.session_state:
         st.session_state.questions = [generate_question() for _ in range(30)]
         st.session_state.current_question = 0
         st.session_state.correct_answers = 0
-        st.session_state.user_answers = [""] * 30
+        st.session_state.user_answers = [""] * 3
         st.session_state.quiz_completed = False
 
     if not st.session_state.quiz_completed:
@@ -28,19 +28,19 @@ def main():
             st.session_state.user_answers[st.session_state.current_question] = user_answer
             st.session_state.current_question += 1
             
-            if st.session_state.current_question == 30:
+            if st.session_state.current_question == 3:
                 st.session_state.quiz_completed = True
                 st.write("Quiz completed!")
                 st.write(f"You answered {st.session_state.correct_answers} out of 30 questions correctly.")
             else:
                 st.experimental_rerun()
     else:
-        st.write(f"Quiz completed! You answered {st.session_state.correct_answers} out of 30 questions correctly.")
+        st.write(f"Quiz completed! You answered {st.session_state.correct_answers} out of 3 questions correctly.")
         if st.button("Restart Quiz"):
             st.session_state.questions = [generate_question() for _ in range(30)]
             st.session_state.current_question = 0
             st.session_state.correct_answers = 0
-            st.session_state.user_answers = [""] * 30
+            st.session_state.user_answers = [""] * 3
             st.session_state.quiz_completed = False
             st.experimental_rerun()
 
