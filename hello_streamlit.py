@@ -31,7 +31,7 @@ def main():
             if st.session_state.current_question == 3:
                 st.session_state.quiz_completed = True
                 st.write("Quiz completed!")
-                st.write(f"You answered {st.session_state.correct_answers} out of 30 questions correctly.")
+                st.write(f"You answered {st.session_state.correct_answers} out of 3 questions correctly.")
             else:
                 st.experimental_rerun()
     else:
