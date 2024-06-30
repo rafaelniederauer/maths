@@ -1,10 +1,9 @@
 import streamlit as st
 
-st.write("""
-# Maths Genius App
-Addition
-Subtraction
-Multiplication
-Division
-""")
+st.title("Maths Genius App")
+st.write("Addition")
+st.write("Subtraction")
+st.write("Multiplication")
+st.write("Division")
+
 
